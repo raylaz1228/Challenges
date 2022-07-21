@@ -14,6 +14,8 @@ The url to hit the backend is `http://localhost:8080/users`. This API takes 2 op
 Its sortBy and filter. Valid options for sortBy are name and age. If you want descending order, simply specify a `-` in front of the sort type as in `-name` or `-age`.
 The filter param is a key value pair. Here are some example of API variation:
 
+The Junit test cases are within the same directory as the controller and file is named `UserRestControllerTest.java` 
+
 ```
 http://localhost:8080/users?sortBy=name
 http://localhost:8080/users?filter=lastname:Kay

@@ -22,7 +22,9 @@ dependencies {
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
     implementation 'org.springframework.boot:spring-boot-starter'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly "junit:junit:4.13.2"
+    compileOnly group: 'org.mockito', name: 'mockito-core', version: "3.12.4"
 }
 
 tasks.named('test') {
