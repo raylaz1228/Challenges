@@ -1,6 +1,6 @@
 rootProject.name = 'Challenges'
 include 'challenge1'
 include 'challenge2'
-include 'frontend'
+include 'challenge1-react-app'
 
 

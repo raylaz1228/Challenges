@@ -5,9 +5,10 @@ The saved .iml files will set most of the project configuration and would requir
 
 ## Challenge1
 
-The only requirement is to install Postgresql on your local machine and use its port in application.properties.
+The only requirement is to install have jdk8 or above installed along with Postgresql on your local machine and if you have a custom port for postgres, you can use it in application.properties.
+If you did not change the default 1542 port, the application will automatically connect to it.
 The project will automatically create a database, the required tables and indexes along with test data using a utility called Liquibase.
-
+If you want to try out the react app, you would require node js and npm installed on your machine.
 ## Backend API
 The url to hit the backend is `http://localhost:8080/users`. This API takes 2 optional parameters.
 Its sortBy and filter. Valid options for sortBy are name and age. If you want descending order, simply specify a `-` in front of the sort type as in `-name` or `-age`.
