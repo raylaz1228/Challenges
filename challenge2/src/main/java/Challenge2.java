@@ -1,3 +1,5 @@
+package main.java;
+
 /**
  * Write a function that takes a positive integer, N, and returns the maximal product of a set of
  * positive integers whose sum is N. Invalid inputs should return 0, that is non-positive integers or

@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.challenge2'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+repositories {
+    mavenCentral()
+}
