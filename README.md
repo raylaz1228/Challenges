@@ -10,8 +10,7 @@ If you did not change the default 1542 port, the application will automatically 
 The project will automatically create a database, the required tables and indexes along with test data using a utility called Liquibase.
 If you want to try out the react app, you would require node js and npm installed on your machine.
 ## Backend API
-The url to hit the backend is `http://localhost:8080/users`. This API takes 2 optional parameters.
-Its sortBy and filter. Valid options for sortBy are name and age. If you want descending order, simply specify a `-` in front of the sort type as in `-name` or `-age`.
+The url to hit the backend is `http://localhost:8080/users`. This API takes 4 optional parameters namely sortBy, filter, start and limit. Valid options for sortBy are name and age. If you want descending order, simply specify a `-` in front of the sort type as in `-name` or `-age`.
 The filter param is a key value pair. Here are some example of API variation:
 
 The Junit test cases are within the same directory as the controller and file is named `UserRestControllerTest.java` 
