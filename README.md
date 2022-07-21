@@ -24,7 +24,8 @@ http://localhost:8080/users?sortBy=age&filter=age:30,lastname:Kay
 http://localhost:8080/users?sortBy=age&filter=age:30,lastname:Kay&start=0&limit=100
 ```
 
-##Challenge 1 - React app
+## Challenge1 - React App
+
 If opened on Intellij, you would see a run config called "challenge1-frontend" which basically does a `npm start`.
 For the purpose of this challenge and in the interest of time, pagination is not implemented on the data table but can be accessible using the start and limit fields.
 But the backend API is capable of doing pagination using start and limit params.
