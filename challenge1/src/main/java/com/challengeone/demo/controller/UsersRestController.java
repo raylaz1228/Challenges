@@ -76,7 +76,14 @@ public class UsersRestController {
                                                      .start(start)
                                                      .sortKey(sortByType)
                                                      .filter(filterMap).build();
-        List<UsersEntity> listOfUsers = usersRepository.findAll(UsersSpec.findUsersByCriteria(usersCriteria), PageRequest.of(start, limit)).getContent();
+
+        List<UsersEntity> listOfUsers = null;
+        if (limit == -1) {
+            listOfUsers = usersRepository.findAll(UsersSpec.findUsersByCriteria(usersCriteria));
+
+        } else {
+            listOfUsers = usersRepository.findAll(UsersSpec.findUsersByCriteria(usersCriteria), PageRequest.of(start, limit)).getContent();
+        }
 
         /**
          * Tranform the dbo to pojo object.

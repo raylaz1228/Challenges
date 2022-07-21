@@ -24,8 +24,13 @@ http://localhost:8080/users?sortBy=age&filter=age:30,lastname:Kay&start=0&limit=
 
 ##Challenge 1 - React app
 If opened on Intellij, you would see a run config called "challenge1-frontend" which basically does a `npm start`.
-For the purpose of this challenge and in the interest of time, pagination is not implemented.
+For the purpose of this challenge and in the interest of time, pagination is not implemented on the data table but can be accessible using the start and limit fields.
 But the backend API is capable of doing pagination using start and limit params.
+Field `start` is like page number and it starts with 0 and `limit` is like record limit. 
+For example if you wish to see the 2nd set of 100 results, you set the `start` as 1 and `limit` as 100.
+If you wish to see all the results in the db, pass the `limit` as `-1`.
+
+![Alt text](ReactAppScreenshot.png?raw=true "ReactApp")
 
 ## Challenge 2
 To test challenge2, run Challege2.java which is a standalone java class file.

@@ -5,7 +5,7 @@ import {Container, Table} from "reactstrap";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {users: [], filterByAge: '', filterByLastName: '', sortBy: 'name', direction: ''};
+    this.state = {users: [], filterByAge: '', filterByLastName: '', sortBy: 'name', direction: '', start: '0', limit: '100'};
   }
 
   componentDidMount() {
@@ -16,6 +16,7 @@ class App extends Component {
 
   searchFilter = () => {
     let queryParams = 'sortBy='+this.state.direction+this.state.sortBy;
+    queryParams += '&start='+this.state.start+ '&limit='+this.state.limit;
     if (this.state.filterByLastName !== '') {
       queryParams += '&filter=lastname:'+this.state.filterByLastName;
     }
@@ -69,6 +70,18 @@ class App extends Component {
     }
   }
 
+  updateStart = (text) => {
+    this.setState({
+      ...this.state,
+      start: text});
+  }
+
+  updateLimit = (text) => {
+    this.setState({
+      ...this.state,
+      limit: text});
+  }
+
   render() {
     const {users, isLoading} = this.state;
 
@@ -78,6 +91,7 @@ class App extends Component {
 
     const userList = users.map(user => {
       return <tr key={user.name}>
+        <td>{user.id}</td>
         <td style={{whiteSpace: 'nowrap'}}>{user.name}</td>
         <td>{user.age}</td>
         <td>
@@ -131,14 +145,31 @@ class App extends Component {
                 <input type="radio" name="direction" id="desc"
                        autoComplete="off" onChange={(event)  => this.updateDirection(event.target.id)} /> Decending</label>
             </div>
+            <br />
+            <div className={'mt-3'}>
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">Pagination start</span>
+                </div>
+                <input type="text" onChange={(event) => this.updateStart(event.target.value)} className="form-control input-sm" aria-label="Enter last name to be filtered by" />
+              </div>
+
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">Pagination Limit</span>
+                </div>
+                <input type="text" onChange={(event) => this.updateLimit(event.target.value)} className="form-control input-sm" aria-label="Enter age to be filtered by" />
+              </div>
+            </div>
 
             <div className={'mt-3'}><input className="btn btn-primary" type="button" onClick={() => this.searchFilter()} value="Submit" /></div>
 
             <Table className="mt-4">
               <thead>
               <tr>
+                <th width="10%">Id</th>
                 <th width="30%">Name</th>
-                <th width="30%">Age</th>
+                <th width="20%">Age</th>
                 <th width="20%">Address 1</th>
                 <th width="20%">Address 2</th>
               </tr>
